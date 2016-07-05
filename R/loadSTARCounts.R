@@ -34,12 +34,12 @@
 loadSTARCounts = function(fnames,quant=c('unstranded','FRaligned','SRaligned')) {
   choices = c('unstranded','FRaligned','SRaligned')
   col = match(match.arg(quant,choices),choices)+1
-  geneNames = read_tsv(fnames[1],skip=4)[,1]
+  geneNames = as.character(data.frame(read_tsv(fnames[1],skip=4,col_names=FALSE))[,1])
   mat = do.call('cbind',
                 lapply(fnames,function(fname) {
-                  read_tsv(fname,skip=4)[,col]
+                  read_tsv(fname,skip=4,col_names=FALSE)[,col]
                   }))
   rownames(mat)=make.unique(geneNames)
   colnames(mat)=fnames
-  return(mat)
+  return(as.matrix(mat))
 }
