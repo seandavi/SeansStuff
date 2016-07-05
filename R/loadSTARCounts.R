@@ -23,7 +23,8 @@
 #' @export
 #' @importFrom readr read_tsv
 #' @examples
-#' fnames = dir(system.file(package='SeansStuff','extdata'),full.names=TRUE)
+#' fnames = dir(system.file(package='SeansStuff','extdata'),
+#'              pattern='*ReadsPerGene*',full.names=TRUE)
 #' mat = loadSTARCounts(fnames)
 #' dim(mat)
 #' head(mat)
