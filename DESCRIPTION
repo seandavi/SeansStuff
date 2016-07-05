@@ -1,0 +1,13 @@
+Package: SeansStuff
+Type: Package
+Title: Example package from CSHL 2016
+Version: 0.1.0
+Author: Sean Davis
+Maintainer: Sean Davis <seandavi@gmail.com>
+Description: This is a demo package used to teach at the Cold Spring
+   Harbor Laboratory "Data" course.
+License: MIT
+Depends: Biobase, pheatmap
+Imports: readr
+LazyData: TRUE
+RoxygenNote: 5.0.1
