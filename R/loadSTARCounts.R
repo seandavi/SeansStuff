@@ -22,6 +22,14 @@
 #'
 #' @export
 #' @importFrom readr read_tsv
+#' @examples
+#' fnames = dir(system.file(package='SeansStuff','extdata'),full.names=TRUE)
+#' mat = loadSTARCounts(fnames)
+#' dim(mat)
+#' head(mat)
+#' # clean up column names
+#' colnames(mat) = basename(colnames(mat))
+#' head(mat)
 loadSTARCounts = function(fnames,quant=c('unstranded','FRaligned','SRaligned')) {
   choices = c('unstranded','FRaligned','SRaligned')
   col = match(match.arg(quant,choices),choices)+1

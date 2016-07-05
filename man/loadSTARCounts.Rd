@@ -32,4 +32,13 @@ is in the same direction as the strand of the mRNA, and
 \code{SRaligned} is for when the second read is in the same
 direction as the strand of the mRNA.
 }
+\examples{
+fnames = dir(system.file(package='SeansStuff','extdata'),full.names=TRUE)
+mat = loadSTARCounts(fnames)
+dim(mat)
+head(mat)
+# clean up column names
+colnames(mat) = basename(colnames(mat))
+head(mat)
+}
 
